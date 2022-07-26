@@ -1,0 +1,203 @@
+:root {
+    --main-bg-color: #1A1B1D;
+    --light-blue: #3459E0;
+    --dark-blue: #3459E0;
+    --footerColor: #a6bfd6;
+    --footerBg: #353535;
+    --container-width: 500px;
+  }
+
+body {
+    font-family: 'Josefin Sans', sans-serif;
+    background: var(--main-bg-color);
+    height:99vh; margin-top: 20px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+}   
+
+body, .drop {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.upload {
+    background: #2F3034;
+    box-shadow: 0px 20px 20px 1px #746e6e17;
+    border-radius: 15px;
+}
+
+.drop {
+    width: var(--container-width);
+    min-height: 200px;
+    border: 2px dashed var(--light-blue);
+    margin: 20px;
+    border-radius: 10px;
+    transition: all .2s ease;
+}
+
+.icon {
+    width: 75px;
+    height: 100px;
+    position: relative;
+}
+
+.icon img{
+    width: 75px;
+    position: absolute;
+    transform-origin: bottom;
+    transition: transform 250ms ease-in-out;
+}
+
+.icon .center{
+    z-index: 2;
+}
+.icon .left, .icon .right {
+    filter: grayscale(.5);
+    transform: scale(.8);
+}
+.dragged.drop{
+    background: #38393c;
+}
+.dragged .center {
+    transform: translateY(-5px);
+  }
+
+.dragged .icon .left {
+    transform: rotate(-10deg) translateX(-20px) scale(.9);
+}
+.dragged .icon .right {
+    transform: rotate(10deg) translateX(20px) scale(.9);
+}
+
+.fileInput{
+    display: none;
+}
+.btn {
+    color: #3459E0;
+    cursor: pointer;
+}
+
+.progressBar{
+    width: var(--container-width);
+    height: 50px;
+    border: 2px solid var(--light-blue) ;
+    margin: 20px;
+    border-radius: 10px;
+    position: relative;
+    display: none;
+}
+
+.progressBar .progress {
+    background: var(--light-blue);
+    width: 0%;
+    height: 100%;
+    border-radius: 10px;
+    transform-origin: left; 
+    position: absolute;
+}
+
+.progressBar .inner-container {
+    position: absolute;
+    z-index: 1;
+    margin: 10px 15px;
+}
+.percent {
+    font-size: 12px;
+    margin: 5px;
+}
+
+.sharing{ 
+    margin-bottom: 20px;
+    border-radius: 10px;
+    width: var(--container-width);
+    margin: 20px;
+    display: none;
+}
+p.expire{
+    opacity: .7;
+    text-align: center;
+}
+.sharing .input-container{
+    display: flex;
+    position: relative;
+    width: 100%;
+    margin-bottom: 20px;
+}
+.sharing .input-container input{
+    background: #3f4044 ;
+    color: rgb(149, 144, 144);
+    width: 100%;
+    border: 2px dashed var(--dark-blue);
+    border-radius: 6px;
+    padding: 10px 15px;
+    box-sizing: border-box;
+    font-size: 16px;
+}
+.input-container img{
+    position: absolute;
+    height: 29px;
+    width: 32px;
+    right: 6px;
+    top: 9px;
+    cursor: pointer;
+    /*background: var(--footerBg);*/
+}
+
+.qr-container {
+    width: var(--container-width);
+    margin: 20px;
+    padding: 7px;
+    border-radius: 10px;
+    display: none;
+}
+p.qrtext {
+    opacity: .7;
+    text-align: center;
+}
+.qr-container .qr {
+    display: flex;
+    position: relative;
+    justify-content: center;
+    width: 100%;
+}
+.qr{
+    width: 100%;
+    border: 2px dashed var(--dark-blue);
+    border-radius: 6px;
+    padding: 20px 15px;
+    box-sizing: border-box;
+}
+
+.toast {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translate(-50%, 60px);
+    padding: 10px 15px;
+    border-radius: 5px;
+    background: var(--dark-blue);
+    color: #fff;
+    transition: transform ease-in-out 0.2s;
+    box-shadow: 0px 20px 25px -5px rgba(208, 195, 195, 0.15) , 0px 10px 10px -5px rgba(153, 140, 140, 0.1) 
+}
+
+footer {
+    bottom: 0;
+    margin-top: auto;
+    min-height: 50px;
+  }
+  a:link {
+    text-decoration: none;
+  }
+
+@media screen and (max-width: 900px) {
+    :root {
+        --container-width: 320px;
+    }
+}

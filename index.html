@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@600&display=swap" rel="stylesheet">
+    <title>QShare | File Sharing App.</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+   <h1>QShare | File Sharing App.</h1> 
+   <section class="upload">
+    <div class="drop">
+        <div class="icon">
+            <img src="./icon.png" alt="upload icon" class="left" draggable="false">
+            <img src="./icon.png" alt="upload icon" class="center" draggable="false">
+            <img src="./icon.png" alt="upload icon" class="right" draggable="false">
+        </div>
+        <input type="file" class="fileInput">
+        <div class="title">Drop your files here or, <span class="btn">browse</span> </div>
+    </div>
+    <div class="progressBar">
+        <div class="progress"></div>
+        <div class="inner-container">
+            <div class="title">Uploading...</div>
+            <div class="percent"><span id="percent">0</span>%</div>
+            <div class="bar"></div>
+        </div>     
+    </div>
+    <div class="sharing">
+        <p class="expire">Link expires in 24 hrs.</p>
+        <div class="input-container">
+            <input type="text" id="fileURL"  readonly>
+            <img src="./copy-icon.png" alt="copyIcon" id="copyBtn">
+        </div>
+    </div>
+    <div class="qr-container"> 
+        <p class="qrtext">Scan the Code to download.</p>            
+        <div class="qr">
+            <img id="qr-code" alt="QR Code">
+        </div>
+    </div>
+   </section>
+   <div class="toast"></div>
+   <script src="index.js"></script>
+   <footer class = footer>    
+    Made with ❤️ by Varun.
+    <a href="https://github.com/vrun1208">
+        <i class="fab fa-github fa-lg"> </i> 
+    </a>   
+</footer>
+</body>
+</html>
